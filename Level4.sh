@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo "Please enter Memcache endpoint(ex : aws-hands-on.ndzwq5.cfg.apn2.cache.amazonaws.com:11211)"
+echo "Please enter Memcache endpoint(ex : megazone-hands-on.ndzwq5.cfg.apn2.cache.amazonaws.com:11211)"
 read memcache_endpoint
 
 memcache=$(echo  $memcache_endpoint | awk -F":" '{print $1}')  ## port number 분리
