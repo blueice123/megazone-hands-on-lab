@@ -51,7 +51,6 @@ perl -pi -e "s/\;date.timezone =/date.timezone = Asia\/Seoul/g" /etc/php.ini
 sudo chown -R ec2-user:ec2-user /var/www
 cd /var/www/html
 git clone https://github.com/blueice123/aws-hands-on-lab.git  >& /dev/null
-mv /var/www/html/awskrug-beginner /var/www/html/web-demo >& /dev/null
 
 ## Apache 시작
 sudo service httpd start >& /dev/null
