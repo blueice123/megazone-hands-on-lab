@@ -80,7 +80,7 @@ case "$1" in
             ## NFS 설정
             cp -rp /etc/exports /etc/exports.$day #backup
             cp -rp /etc/hosts.allow /etc/hosts.allow.$day #backup
-            echo "/var/www/html/web-demo/uploads/ 10.100.0.0/16(rw,fsid=0,insecure,no_subtree_check,async)" >> /etc/exports
+            echo "/var/www/html/web-demo/uploads/ 10.200.0.0/16(rw,fsid=0,insecure,no_subtree_check,async)" >> /etc/exports
             echo "portmap:ALL" >> /etc/hosts.allow
             echo "lockd:ALL" >> /etc/hosts.allow
             echo "mountd:ALL" >> /etc/hosts.allow
@@ -112,7 +112,7 @@ case "$1" in
             ## NFS 설정
             sudo service rpcbind restart  >& /dev/null
             sudo service nfslock restart  >& /dev/null
-            echo "Please enter NFS Server Private IP(ex: 10.100.128.22)"
+            echo "Please enter NFS Server Private IP(ex: 10.200.128.22)"
             read NFS_SERVER_IP
             if  [ -n "$NFS_SERVER_IP" ];then
               mv /var/www/html/web-demo/uploads/ /var/www/html/web-demo/uploads.$day
