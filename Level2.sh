@@ -26,8 +26,8 @@ case "$1" in
             sudo umount -f /var/www/html/web-demo/uploads
 
             echo "Please enter S3 bucket name(ex : megazone-bucket-luke)"
-            read s3_bucket
-            s3_config $s3_bucket
+            read s3_bucket_name
+            s3_config $s3_bucket_name
         ;;
         *)
             echo $"Usage: $0 {server|client}"
