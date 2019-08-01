@@ -14,7 +14,7 @@ case "$1" in
             ## NFS 설정
             sudo service nfs stop >& /dev/null
 
-            echo "Please enter S3 bucket name(ex : aws-hands-on-beginner-syha)"
+            echo "Please enter S3 bucket name(ex : megazone-bucket-luke)"
             read s3_bucket_name
             s3_config $s3_bucket_name
         ;;
@@ -25,7 +25,7 @@ case "$1" in
             ## NFS 설정
             sudo umount -f /var/www/html/web-demo/uploads
 
-            echo "Please enter S3 bucket name(ex : aws-hands-on-beginner-syha)"
+            echo "Please enter S3 bucket name(ex : megazone-bucket-luke)"
             read s3_bucket
             s3_config $s3_bucket
         ;;
