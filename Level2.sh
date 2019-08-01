@@ -3,7 +3,6 @@
 function s3_config(){
   perl -pi -e "s/$storage_option = \"hd\"\;/$storage_option = \"s3\"\;/g" /var/www/html/web-demo/config.php
   perl -pi -e "s/$s3_bucket  = \"my-upload-bucket\"\;/$s3_bucket  = \"$s3_bucket_name\";/g" /var/www/html/web-demo/config.php
-
   sudo service httpd restart >& /dev/null
 }
 
@@ -17,6 +16,7 @@ case "$1" in
             echo "Please enter S3 bucket name(ex : megazone-bucket-luke)"
             read s3_bucket_name
             s3_config $s3_bucket_name
+  	    sudo aws s3 sync /var/www/html/megazone-hands-on-lab/uploads/ s3://$s3_bucket_name --acl public-read
         ;;
 
         client)
